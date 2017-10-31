@@ -10,7 +10,7 @@ var message = new gcm.Message({
 });
 
 // Specify which registration IDs to deliver the message to
-var regTokens = ['cFWKMZmYgcM:APA91bFlpEiDWf0QSrZ88Lq8J9c_72Y1L9yb9DO2znXpqAuNK7LV7pscv5886wC86-JbYC0yOtXG1T04JVYKFjz8o1aeUv8sgjzm3aAJFJ3dYyxvJjsxrRZxsoWQqtLyW5kebv0yW-xV'
+var regTokens = ['eIC9IpR1lXo:APA91bHf84XZOovELgVoJ9MmU9jRjpPYDTHLJ_0ZNhP41GDA-SA2zdfH6n7LM5kVOa4hyPbsSqd3_SSSjfo4bW7GtVUzZA5J2NDruZ1nBTwIWCDa5N8MLp7cOQrMZX1_PGVvs3LWS8uR'
     ,'cFDRd5_WvQU:APA91bEKlTU6hLw2w1bxJkSEE6lBaIC6OnNricJzeTMhikwRyy1qZT7DrMhlrE6y3WuLEq7JndKlJYCasf0N3zcLDIziYgOXAGM9AWJNSmSRvyM27aOfBTgx8t6CKAO-HymtcyasQHvj'];
 
 // Actually send the message
