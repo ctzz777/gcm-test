@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/48938155eb24b4ccdde09426066869504c6dab3c/dist/css/bootstrap.min.css">
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script>
+      var config = {
+        apiKey: "AIzaSyDxnbMoT_27KhF4_cWjolyscfmFNJZ04mo",
+        authDomain: "gcm-test-bada7.firebaseapp.com",
+        databaseURL: "https://gcm-test-bada7.firebaseio.com",
+        projectId: "gcm-test-bada7",
+        storageBucket: "gcm-test-bada7.appspot.com",
+        messagingSenderId: "851465378036"
+      };
+      firebase.initializeApp(config);
+    </script>
+  </head>
+  <body>
+    <div class="container"></div>
+  </body>
+  <script>
+    var messaging = firebase.messaging();
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/firebase-messaging-sw.js')
+        .then((registration) => {
+          messaging.useServiceWorker(registration);
+        })
+        .then(() => {
+          messaging.requestPermission()
+            .then(function() {
+              console.log('Notification permission granted.');
+              return messaging.getToken();
+            })
+            .then(function(token) {
+              console.log(token);
+            })
+            .catch(function(err) {
+              console.log('Unable to get permission to notify.', err);
+            });
+        });
+      }
+
+  </script>
+  <script src="/bundle.js"></script>
+</html>
